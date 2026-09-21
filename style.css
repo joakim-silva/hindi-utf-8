@@ -1,0 +1,184 @@
+/* Colours used by the page. */
+:root {
+  color-scheme: light;
+  --ink: #172019;
+  --line: #dce2dd;
+  --blue-slate: #30657a;
+  --sage: #a4b0a492;
+  --saffron: #ff671f;
+  --white: #ffffff;
+  --india-green: #046a38;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--sage);
+  color: var(--ink);
+  font: 16px/1.6 Arial, Helvetica, sans-serif;
+}
+
+header,
+main {
+  width: min(1180px, calc(100% - 48px));
+  margin: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 16px;
+}
+
+header a {
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+header span,
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--blue-slate);
+  font-weight: bold;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 0;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+}
+
+h1 {
+  font: normal clamp(36px, 5vw, 55px)/1.15 Georgia, serif;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font: normal clamp(24px, 2.5vw, 28px)/1.25 Georgia, serif;
+  margin: 32px 0 12px;
+}
+
+.intro p:last-child {
+  color: var(--blue-slate);
+  margin: 12px 0 0;
+  max-width: 760px;
+}
+
+/* Stacked labels retain the original three border colours. */
+.specs {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.specs > span {
+  display: block;
+  padding: 10px 16px;
+  border-left: 4px solid;
+}
+
+.specs > .spec {
+  border-left-color: var(--saffron);
+}
+
+.specs > .spec-2 {
+  border-left-color: var(--white);
+}
+
+.specs > .spec-3 {
+  border-left-color: var(--india-green);
+}
+
+.table-note {
+  margin: 0 0 14px;
+  max-width: 900px;
+}
+
+/* Long code sequences scroll inside the table on small screens. */
+.table {
+  overflow-x: auto;
+  background: var(--white);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
+
+td,
+th {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+}
+
+th {
+  background: #f0f3fa;
+  font-weight: 600;
+}
+
+td[lang="hi"] {
+  font-family: "Nirmala UI", "Kohinoor Devanagari", "Mangal", sans-serif;
+  font-size: 23px;
+  line-height: 1.7;
+}
+
+td:nth-child(3),
+td:nth-child(4) {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue-slate);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  header,
+  main {
+    width: calc(100% - 28px);
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  header span {
+    font-size: 10px;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+  }
+
+  td,
+  th {
+    padding: 8px 10px;
+  }
+}
